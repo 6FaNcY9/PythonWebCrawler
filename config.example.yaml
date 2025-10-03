@@ -1,0 +1,26 @@
+user_agent: "LegalCrawler/1.0 (+contact@example.com)"
+cache_dir: ".cache"
+concurrency:
+  global_max_tasks: 20
+  per_domain_rps: 1.5
+adapters:
+  - name: internet_archive_docs
+    options: {}
+  - name: gov_open_data
+    options:
+      base_url: "https://catalog.data.gov/api/3/action"
+  - name: tmdb_free
+    options:
+      api_key: "${TMDB_API_KEY}"
+  - name: youtube_free
+    options:
+      api_key: "${YOUTUBE_API_KEY}"
+  - name: retailer_api_example
+    options:
+      api_endpoint: "https://api.example.com/products"
+filters:
+  language: ["en", "de"]
+  min_year: 1920
+output:
+  sqlite_path: "data/results.db"
+  jsonl_path: "data/results.jsonl"
