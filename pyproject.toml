@@ -1,0 +1,25 @@
+[project]
+name = "python-web-crawler"
+version = "0.1.0"
+description = "Modular, policy-compliant Python web crawler"
+authors = [{ name = "Example", email = "contact@example.com" }]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx[http2]",
+    "aiolimiter",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "typer>=0.9",
+    "PyYAML",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "respx",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
